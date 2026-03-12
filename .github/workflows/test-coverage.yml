@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Run TestGuardian
-        uses: avinavgit/testguardian@v1.0.0
+        uses: avinavgit/testguardian@main
         with:
           pr-number: ${{ github.event.pull_request.number }}
           coverage-threshold: 80
