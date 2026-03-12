@@ -1,0 +1,19 @@
+name: Test Coverage Analysis
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run TestGuardian
+        uses: avinavgit/testguardian@v1.0.0
+        with:
+          pr-number: ${{ github.event.pull_request.number }}
+          coverage-threshold: 80
+          ai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          ai-provider: openai
