@@ -17,3 +17,4 @@ jobs:
           coverage-threshold: 80
           ai-api-key: ${{ secrets.OPENAI_API_KEY }}
           ai-provider: openai
+          token: ${{ secrets.GITHUB_TOKEN }}
